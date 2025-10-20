@@ -5,11 +5,6 @@
 <h1>On-premises Active Directory Deployed in the Cloud (Azure)</h1>
 This tutorial outlines the implementation of on-premises Active Directory within Azure Virtual Machines.<br />
 
-
-<h2>Video Demonstration</h2>
-
-- ### [YouTube: How to Deploy on-premises Active Directory within Azure Compute](https://www.youtube.com)
-
 <h2>Environments and Technologies Used</h2>
 
 - Microsoft Azure (Virtual Machines/Compute)
@@ -32,25 +27,89 @@ This tutorial outlines the implementation of on-premises Active Directory within
 <h2>Deployment and Configuration Steps</h2>
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img width="696" height="344" alt="image" src="https://github.com/user-attachments/assets/29798ab4-ab6b-47c0-aed4-e3c820b04d97" />
+
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Create a Resource Group.
 </p>
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img width="702" height="642" alt="image" src="https://github.com/user-attachments/assets/070a01cd-e7ca-4909-9bc4-f34e6d99fc2c" />
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Create a Virtual Network and Subnet.
 </p>
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img width="832" height="563" alt="image" src="https://github.com/user-attachments/assets/a768d60b-6685-49d4-a1e4-2983fb747dc9" />
+<img width="519" height="330" alt="image" src="https://github.com/user-attachments/assets/b58fb22f-8d2a-46f9-b8a5-fe3bd3a0f1f5" />
+<img width="565" height="427" alt="image" src="https://github.com/user-attachments/assets/f9ab54d0-76c1-41c7-99f1-f1b02c61556f" />
+
 </p>
+<p>Create the Domain Controller VM (Windows Server 2022) named “DC-1”</p>
+<br />
+
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+<img width="842" height="474" alt="image" src="https://github.com/user-attachments/assets/4e52fc1b-eb9e-4df5-bb19-a3532b898cbf" />
+<img width="912" height="635" alt="image" src="https://github.com/user-attachments/assets/5f19072d-d003-4a39-977c-d9e9617c90fc" />
+
 </p>
+<p>After VM is created, set Domain Controller’s NIC Private IP address to be static.</p>
+<br />
+
+<p>
+<img width="1279" height="769" alt="image" src="https://github.com/user-attachments/assets/9d52b2e3-9f58-4a50-be7d-8db6eb164449" />
+<img width="342" height="247" alt="image" src="https://github.com/user-attachments/assets/4d2cc561-768d-42af-8892-1b1c2f508bb1" />
+<img width="742" height="549" alt="image" src="https://github.com/user-attachments/assets/5265fbc1-e86a-405b-9e1a-a99afb087001" />
+<img width="290" height="322" alt="image" src="https://github.com/user-attachments/assets/92eddf93-6244-4ed9-b5f0-1ec2f42f9d80" />
+
+
+</p>
+<p>Log into the VM and disable the Windows Firewall (for testing connectivity)</p>
+<br />
+
+<p>
+<img width="579" height="614" alt="image" src="https://github.com/user-attachments/assets/56e1aec9-49b3-41cf-980e-f58725143101" />
+<img width="566" height="347" alt="image" src="https://github.com/user-attachments/assets/de6287a3-eca8-4acb-b4b8-e55e8ce668c1" />
+<img width="583" height="461" alt="image" src="https://github.com/user-attachments/assets/9636245f-f9b3-4843-a7ba-855c153e60d4" />
+
+</p>
+<p>Create the Client VM (Windows 10) named “Client-1”</p>
+<br />
+
+<p>
+<img width="837" height="445" alt="image" src="https://github.com/user-attachments/assets/0ac4409a-f898-4327-bfe1-f45702a1e22a" />
+<img width="1106" height="445" alt="image" src="https://github.com/user-attachments/assets/87c52212-ccb3-45d2-914d-7fb28ec3225a" />
+
+
+</p>
+<p>After VM is created, set Client-1’s DNS settings to DC-1’s Private IP address.</p>
+<br />
+
+<p>
+<img width="1102" height="308" alt="image" src="https://github.com/user-attachments/assets/a510beb0-10fe-40d9-a2d7-8e6b5a083aea" />
+
+</p>
+<p>From the Azure Portal, restart Client-1.</p>
+<br />
+
+<p>
+<img width="1102" height="308" alt="image" src="https://github.com/user-attachments/assets/a510beb0-10fe-40d9-a2d7-8e6b5a083aea" />
+
+</p>
+<p>From the Azure Portal, restart Client-1.</p>
+<br />
+
+<p>
+<img width="904" height="374" alt="image" src="https://github.com/user-attachments/assets/abe2833c-4d2b-4fce-bd5f-97be0658b165" />
+<img width="1272" height="682" alt="image" src="https://github.com/user-attachments/assets/1e7d3275-fde1-4ab7-98ca-e87ce367805f" />
+</p>
+<p>Login to Client-1</p>
+<p>Attempt to ping DC-1’s private IP address</p>
+<p>-Ensure the ping succeeded</p>
+<p>From Client-1, open PowerShell and run ipconfig /all</p>
+<p>The output for the DNS settings should show DC-1’s private IP Address</p>
 <br />
