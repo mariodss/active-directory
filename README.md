@@ -113,3 +113,28 @@ Create a Virtual Network and Subnet.
 <p>From Client-1, open PowerShell and run ipconfig /all</p>
 <p>The output for the DNS settings should show DC-1’s private IP Address</p>
 <br />
+
+<p>
+<img width="808" height="531" alt="image" src="https://github.com/user-attachments/assets/50724b3d-4864-47b6-8afc-ab4bbb80f35f" />
+<img width="559" height="392" alt="image" src="https://github.com/user-attachments/assets/5cd1560d-6ee2-486b-8087-3f5058aaac76" />
+<img width="556" height="397" alt="image" src="https://github.com/user-attachments/assets/fd8427b4-420f-460d-877d-607df82397bb" />
+
+</p>
+<p>Install Active Directory</p>
+<p>Login to DC-1 and install Active Directory Domain Services
+</p>
+
+<br />
+
+<p>
+<img width="1275" height="676" alt="image" src="https://github.com/user-attachments/assets/63a0ca77-bd5d-44b6-902a-a3f9ef711bad" />
+<img width="540" height="391" alt="image" src="https://github.com/user-attachments/assets/d9daa683-995f-4698-a13e-f3cab043d3de" />
+<img width="533" height="394" alt="image" src="https://github.com/user-attachments/assets/96f0b25d-0054-44ac-b1d1-2c91934e616d" />
+
+
+</p>
+<p>Promote as a DC: Setup a new forest as mydomain.com (can be anything, just remember what it is)</p>
+<p>-Restart and then log back into DC-1 as user: mydomain.com\labuser</p>
+</p>
+
+<br />
