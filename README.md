@@ -138,3 +138,63 @@ Create a Virtual Network and Subnet.
 </p>
 
 <br />
+
+<p>
+<img width="558" height="414" alt="image" src="https://github.com/user-attachments/assets/8a7ce7ab-291e-4102-b1cc-e02951f42cc5" />
+<img width="1363" height="707" alt="image" src="https://github.com/user-attachments/assets/617b7a6d-26ef-4027-947d-d49b1209a6cc" />
+<img width="597" height="514" alt="image" src="https://github.com/user-attachments/assets/10c82e51-9c79-4977-8532-ec1af0f2e0d2" />
+<img width="617" height="522" alt="image" src="https://github.com/user-attachments/assets/1f40d079-cd11-4f2d-972b-64d569e6a36d" />
+
+</p>
+<p>Create a Domain Admin user within the domain</p>
+<p>-In Active Directory Users and Computers (ADUC), create an Organizational Unit (OU) called “_EMPLOYEES”</p>
+<p>-Create a new OU named “_ADMINS”</p>
+</p>
+
+<br />
+
+<p>
+<img width="1350" height="752" alt="image" src="https://github.com/user-attachments/assets/7611dc05-ec7c-4cf1-a128-092d91c472ab" />
+<img width="600" height="513" alt="image" src="https://github.com/user-attachments/assets/f4a6be60-9c7d-4045-aa2b-bdd15de4984b" />
+<img width="1268" height="680" alt="image" src="https://github.com/user-attachments/assets/8e5f5f13-0ae9-4660-8b0d-0cc4e76def16" />
+<img width="1162" height="765" alt="image" src="https://github.com/user-attachments/assets/d83016d7-a40d-4806-91f2-0eb5526d31a6" />
+<img width="444" height="249" alt="image" src="https://github.com/user-attachments/assets/68c99b75-cf76-49d8-bb7b-d9cad232c08d" />
+
+
+</p>
+<p>Create a new employee named “Jane Doe” with the username of “jane_admin” / Cyberlab123!</p>
+<p>Add jane_admin to the “Domain Admins” Security Group</p>
+<p>Log out / close the connection to DC-1 and log back in as “mydomain.com\jane_admin”.
+User jane_admin as your admin account from now on</p>
+</p>
+
+<br />
+
+<p>
+<img width="823" height="625" alt="image" src="https://github.com/user-attachments/assets/e9974909-de03-40b5-ba67-84bf6391a181" />
+<img width="384" height="392" alt="image" src="https://github.com/user-attachments/assets/56526096-4fc2-4864-854a-d68c3279eea1" />
+<img width="340" height="225" alt="image" src="https://github.com/user-attachments/assets/85d672ce-7736-46ff-a198-fa4401106441" />
+
+
+</p>
+<p>Login to Client-1 as the original local admin (labuser) and join it to the domain (computer will restart)</p>
+
+
+<br />
+
+<p>
+<img width="1102" height="616" alt="image" src="https://github.com/user-attachments/assets/4f2fb7d9-403b-488c-8f3b-1cbb755555bd" />
+
+
+</p>
+<p>Login to the Domain Controller and verify Client-1 shows up in ADUC</p>
+
+<br />
+
+<p>
+<img width="936" height="498" alt="image" src="https://github.com/user-attachments/assets/7e87bea4-13ad-4391-ac4c-12e5e340bef7" />
+
+</p>
+<p>Create a new OU named “_CLIENTS” and drag Client-1 into there</p>
+
+<br />
