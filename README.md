@@ -198,3 +198,36 @@ User jane_admin as your admin account from now on</p>
 <p>Create a new OU named “_CLIENTS” and drag Client-1 into there</p>
 
 <br />
+
+<p>
+<img width="846" height="650" alt="image" src="https://github.com/user-attachments/assets/060448a9-a1ef-4b04-8237-792de85b0fe0" />
+<img width="395" height="248" alt="image" src="https://github.com/user-attachments/assets/2288bd67-109c-480f-846b-ae00ab330b0f" />
+
+
+</p>
+<p>Setup Remote Desktop for non-administrative users on Client-1</p>
+<p>-Log into Client-1 as mydomain.com\jane_admin</p>
+<p>-Open system properties</p>
+<p>-Click “Remote Desktop”</p>
+<p>-Allow “domain users” access to remote desktop</p>
+<p>You can now log into Client-1 as a normal, non-administrative user now</p>
+<br />
+
+
+<p>
+<img width="624" height="481" alt="image" src="https://github.com/user-attachments/assets/2597259b-a52d-43ad-b82f-42fa9bd71bcd" />
+<img width="1084" height="729" alt="image" src="https://github.com/user-attachments/assets/1af81c68-88ff-40af-88c8-3b392018de50" />
+<img width="1292" height="453" alt="image" src="https://github.com/user-attachments/assets/39964fd4-aa7d-4033-bc51-7aaee7f1ece0" />
+<img width="999" height="744" alt="image" src="https://github.com/user-attachments/assets/e36c688e-9e8a-46ad-9df0-62489b550d71" />
+<img width="1272" height="655" alt="image" src="https://github.com/user-attachments/assets/0ce80d0e-cff2-4f76-ac34-7d3993097db7" />
+
+
+</p>
+<p>Create a bunch of additional users and attempt to log into client-1 with one of the users</p>
+<p>-Login to DC-1 as jane_admin</p>
+<p>-Open PowerShell_ise as an administrator</p>
+<p>-Create a new File and paste the contents of the script: https://github.com/joshmadakor1/AD_PS/blob/master/Generate-Names-Create-Users.ps1 into it</p>
+<p>-Run the script and observe the accounts being created</p>
+<p>-When finished, open ADUC and observe the accounts in the appropriate OU　(_EMPLOYEES)</p>
+<p>-Attempt to log into Client-1 with one of the accounts (take note of the password in the script: "Password1" and username style: mydomain.com\"random name")</p>
+<br />
