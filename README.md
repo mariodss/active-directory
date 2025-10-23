@@ -231,3 +231,76 @@ User jane_admin as your admin account from now on</p>
 <p>-When finished, open ADUC and observe the accounts in the appropriate OU　(_EMPLOYEES)</p>
 <p>-Attempt to log into Client-1 with one of the accounts (take note of the password in the script: "Password1" and username style: mydomain.com\"random name")</p>
 <br />
+
+<p>
+<img width="324" height="174" alt="image" src="https://github.com/user-attachments/assets/67df0a4b-ec08-4379-949d-91f7bee39bf8" />
+<img width="827" height="552" alt="image" src="https://github.com/user-attachments/assets/ed6113d8-2eb7-4f31-b3e6-b4d322a83564" />
+<img width="1064" height="417" alt="image" src="https://github.com/user-attachments/assets/f88e3c71-b7c2-497d-9220-54c99d007f56" />
+<img width="298" height="357" alt="image" src="https://github.com/user-attachments/assets/3bc3d36d-bb11-437d-885a-e4bfb906e34e" />
+<img width="303" height="355" alt="image" src="https://github.com/user-attachments/assets/8e79146a-a984-4466-9b59-65ebd9410c9b" />
+<img width="684" height="359" alt="image" src="https://github.com/user-attachments/assets/66a7db80-e4a0-4e06-ba6c-ead1d48bdebd" />
+
+
+</p>
+<p>Configuring an account lockout policy in Active Directory using Group Policy involves defining settings that control when an account is locked after multiple failed login attempts, how long the account remains locked, and how the lockout counter is reset. Here’s a step-by-step guide on how to do this:
+</p>
+<p>-Log in to a machine with Group Policy Management Console installed (typically, a Domain Controller). </p>
+<p>-Click Start, and type gpmc.msc in the search box, then press Enter. This opens the Group Policy Management Console.</p>
+<p>-In the GPMC, navigate to the Group Policy Objects section.</p>
+<p>-Right-click Group Policy Objects and select New to create a new GPO, or right-click an existing GPO and select Edit to modify it.</p>
+<p>-In the Group Policy Management Editor, expand the following:
+Computer Configuration > Policies > Windows Settings > Security Settings > Account Policies > Account Lockout Policy.</p>
+<p>-Configure Account Lockout Policy Settings</p>
+<p>-Update Group Policy</p>
+
+<br />
+
+<p>
+<img width="183" height="218" alt="image" src="https://github.com/user-attachments/assets/4f3a2179-a467-4a4a-8195-53a1d7bfcf74" />
+<img width="1056" height="526" alt="image" src="https://github.com/user-attachments/assets/7b610a6f-ed11-44ae-8126-3adee866000d" />
+<img width="360" height="357" alt="image" src="https://github.com/user-attachments/assets/3ae7fec9-1d12-421d-90a3-27fb221dfdd7" />
+
+
+</p>
+<p>Dealing with Account Lockouts</p>
+<p>-Get logged into dc-1.</p>
+<p>-Pick a random user account you created previously.</p>
+<p>-Attempt to log in with it 5 times with a bad password.</p>
+<p>-Observe that the account has been locked out within Active Directory.</p>
+<p>-Unlock the account.</p>
+<p>-Reset the password.</p>
+<p>-Attempt to log in with it.</p>
+
+<br />
+
+
+<p>
+<img width="591" height="458" alt="image" src="https://github.com/user-attachments/assets/ccb0553a-ad8c-4f71-a419-f6b44d8c25c4" />
+<img width="185" height="181" alt="image" src="https://github.com/user-attachments/assets/a2391d8b-a262-4f0e-a20f-cee2285cbc98" />
+<img width="468" height="407" alt="image" src="https://github.com/user-attachments/assets/b721a674-236f-476e-9039-fd642dbfa8c2" />
+
+
+
+</p>
+<p>Enabling and Disabling Accounts</p>
+<p>-Disable the same account in Active Directory.</p>
+<p>-Attempt to login with it, observe the error message.</p>
+<p>-Re-enable the account and attempt to login with it.</p>
+
+
+<br />
+
+
+<p>
+<img width="552" height="399" alt="image" src="https://github.com/user-attachments/assets/c654e517-655b-417e-ae68-3fffb10def74" />
+<img width="1119" height="665" alt="image" src="https://github.com/user-attachments/assets/d8a5e74f-5b31-4734-9396-fcdbc2fee19d" />
+<img width="1146" height="585" alt="image" src="https://github.com/user-attachments/assets/028973bd-aafd-49f5-85f1-486ec32f0acf" />
+
+
+</p>
+<p>Observing Logs</p>
+<p>-Observe the logs in the Domain Controller.</p>
+<p>-Observe the logs on the client Machine.</p>
+
+
+<br />
