@@ -31,7 +31,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
 
 </p>
 <p>
-Create a Resource Group.
+<b>1) </b>Create a Resource Group.
 </p>
 <br />
 
