@@ -30,9 +30,9 @@ This tutorial outlines the implementation of on-premises Active Directory within
 <img width="696" height="344" alt="image" src="https://github.com/user-attachments/assets/29798ab4-ab6b-47c0-aed4-e3c820b04d97" />
 
 </p>
-<p>
-<b>1) </b>Create a Resource Group.
-</p>
+
+<p><b>1) </b>Setup Domain Controller in Azure</p>
+<p>Create a Resource Group.</p>
 <br />
 
 <p>
@@ -49,7 +49,7 @@ Create a Virtual Network and Subnet.
 <img width="565" height="427" alt="image" src="https://github.com/user-attachments/assets/f9ab54d0-76c1-41c7-99f1-f1b02c61556f" />
 
 </p>
-<p>Create the Domain Controller VM (Windows Server 2022) named “DC-1”</p>
+<p>Create the Domain Controller VM (Windows Server 2022) named “DC-1”.</p>
 <br />
 
 <p>
@@ -68,7 +68,7 @@ Create a Virtual Network and Subnet.
 
 
 </p>
-<p>Log into the VM and disable the Windows Firewall (for testing connectivity)</p>
+<p>Log into the VM and disable the Windows Firewall (for testing connectivity).</p>
 <br />
 
 <p>
@@ -77,7 +77,8 @@ Create a Virtual Network and Subnet.
 <img width="583" height="461" alt="image" src="https://github.com/user-attachments/assets/9636245f-f9b3-4843-a7ba-855c153e60d4" />
 
 </p>
-<p>Create the Client VM (Windows 10) named “Client-1”</p>
+<p><b>2) </b>Setup Client-1 in Azure</p>
+<p>Create the Client VM (Windows 10) named “Client-1”.</p>
 <br />
 
 <p>
@@ -107,11 +108,11 @@ Create a Virtual Network and Subnet.
 <img width="904" height="374" alt="image" src="https://github.com/user-attachments/assets/abe2833c-4d2b-4fce-bd5f-97be0658b165" />
 <img width="1272" height="682" alt="image" src="https://github.com/user-attachments/assets/1e7d3275-fde1-4ab7-98ca-e87ce367805f" />
 </p>
-<p>Login to Client-1</p>
-<p>Attempt to ping DC-1’s private IP address</p>
+<p>Login to Client-1.</p>
+<p>Attempt to ping DC-1’s private IP address.</p>
 <p>-Ensure the ping succeeded</p>
 <p>From Client-1, open PowerShell and run ipconfig /all</p>
-<p>The output for the DNS settings should show DC-1’s private IP Address</p>
+<p>-The output for the DNS settings should show DC-1’s private IP Address</p>
 <br />
 
 <p>
@@ -120,8 +121,8 @@ Create a Virtual Network and Subnet.
 <img width="556" height="397" alt="image" src="https://github.com/user-attachments/assets/fd8427b4-420f-460d-877d-607df82397bb" />
 
 </p>
-<p>Install Active Directory</p>
-<p>Login to DC-1 and install Active Directory Domain Services
+<p><b>3) </b>Install Active Directory.</p>
+<p>Login to DC-1 and install Active Directory Domain Services.
 </p>
 
 <br />
@@ -133,8 +134,8 @@ Create a Virtual Network and Subnet.
 
 
 </p>
-<p>Promote as a DC: Setup a new forest as mydomain.com (can be anything, just remember what it is)</p>
-<p>-Restart and then log back into DC-1 as user: mydomain.com\labuser</p>
+<p>Promote as a DC: Setup a new forest as mydomain.com (can be anything, just remember what it is).</p>
+<p>-Restart and then log back into DC-1 as user: mydomain.com\labuser.</p>
 </p>
 
 <br />
@@ -146,9 +147,9 @@ Create a Virtual Network and Subnet.
 <img width="617" height="522" alt="image" src="https://github.com/user-attachments/assets/1f40d079-cd11-4f2d-972b-64d569e6a36d" />
 
 </p>
-<p>Create a Domain Admin user within the domain</p>
-<p>-In Active Directory Users and Computers (ADUC), create an Organizational Unit (OU) called “_EMPLOYEES”</p>
-<p>-Create a new OU named “_ADMINS”</p>
+<p><b>4) </b>Create a Domain Admin user within the domain.</p>
+<p>-In Active Directory Users and Computers (ADUC), create an Organizational Unit (OU) called “_EMPLOYEES”.</p>
+<p>-Create a new OU named “_ADMINS”.</p>
 </p>
 
 <br />
@@ -162,10 +163,10 @@ Create a Virtual Network and Subnet.
 
 
 </p>
-<p>Create a new employee named “Jane Doe” with the username of “jane_admin” / Cyberlab123!</p>
-<p>Add jane_admin to the “Domain Admins” Security Group</p>
+<p>Create a new employee named “Jane Doe” with the username of “jane_admin” / Cyberlab123!.</p>
+<p>Add jane_admin to the “Domain Admins” Security Group.</p>
 <p>Log out / close the connection to DC-1 and log back in as “mydomain.com\jane_admin”.
-User jane_admin as your admin account from now on</p>
+User jane_admin as your admin account from now on.</p>
 </p>
 
 <br />
@@ -177,7 +178,8 @@ User jane_admin as your admin account from now on</p>
 
 
 </p>
-<p>Login to Client-1 as the original local admin (labuser) and join it to the domain (computer will restart)</p>
+<p><b>5) </b>Join Client-1 to your domain (mydomain.com)</p>
+<p>Login to Client-1 as the original local admin (labuser) and join it to the domain (computer will restart).</p>
 
 
 <br />
@@ -187,7 +189,7 @@ User jane_admin as your admin account from now on</p>
 
 
 </p>
-<p>Login to the Domain Controller and verify Client-1 shows up in ADUC</p>
+<p>Login to the Domain Controller and verify Client-1 shows up in ADUC.</p>
 
 <br />
 
@@ -195,7 +197,7 @@ User jane_admin as your admin account from now on</p>
 <img width="936" height="498" alt="image" src="https://github.com/user-attachments/assets/7e87bea4-13ad-4391-ac4c-12e5e340bef7" />
 
 </p>
-<p>Create a new OU named “_CLIENTS” and drag Client-1 into there</p>
+<p>Create a new OU named “_CLIENTS” and drag Client-1 into there.</p>
 
 <br />
 
@@ -205,12 +207,12 @@ User jane_admin as your admin account from now on</p>
 
 
 </p>
-<p>Setup Remote Desktop for non-administrative users on Client-1</p>
-<p>-Log into Client-1 as mydomain.com\jane_admin</p>
-<p>-Open system properties</p>
-<p>-Click “Remote Desktop”</p>
-<p>-Allow “domain users” access to remote desktop</p>
-<p>You can now log into Client-1 as a normal, non-administrative user now</p>
+<p><b>6) </b>Setup Remote Desktop for non-administrative users on Client-1.</p>
+<p>-Log into Client-1 as mydomain.com\jane_admin.</p>
+<p>-Open system properties.</p>
+<p>-Click “Remote Desktop”.</p>
+<p>-Allow “domain users” access to remote desktop.</p>
+<p>You can now log into Client-1 as a normal, non-administrative user now.</p>
 <br />
 
 
@@ -223,13 +225,13 @@ User jane_admin as your admin account from now on</p>
 
 
 </p>
-<p>Create a bunch of additional users and attempt to log into client-1 with one of the users</p>
-<p>-Login to DC-1 as jane_admin</p>
-<p>-Open PowerShell_ise as an administrator</p>
-<p>-Create a new File and paste the contents of the script: https://github.com/joshmadakor1/AD_PS/blob/master/Generate-Names-Create-Users.ps1 into it</p>
-<p>-Run the script and observe the accounts being created</p>
-<p>-When finished, open ADUC and observe the accounts in the appropriate OU　(_EMPLOYEES)</p>
-<p>-Attempt to log into Client-1 with one of the accounts (take note of the password in the script: "Password1" and username style: mydomain.com\"random name")</p>
+<p><b>7) </b>Create a bunch of additional users and attempt to log into client-1 with one of the users.</p>
+<p>-Login to DC-1 as jane_admin.</p>
+<p>-Open PowerShell_ise as an administrator.</p>
+<p>-Create a new File and paste the contents of the script: https://github.com/joshmadakor1/AD_PS/blob/master/Generate-Names-Create-Users.ps1 into it.</p>
+<p>-Run the script and observe the accounts being created.</p>
+<p>-When finished, open ADUC and observe the accounts in the appropriate OU　(_EMPLOYEES).</p>
+<p>-Attempt to log into Client-1 with one of the accounts (take note of the password in the script: "Password1" and username style: mydomain.com\"random name").</p>
 <br />
 
 <p>
@@ -242,6 +244,7 @@ User jane_admin as your admin account from now on</p>
 
 
 </p>
+<p><b>8) </b>Configure an account lockout policy.</p>
 <p>Configuring an account lockout policy in Active Directory using Group Policy involves defining settings that control when an account is locked after multiple failed login attempts, how long the account remains locked, and how the lockout counter is reset. Here’s a step-by-step guide on how to do this:
 </p>
 <p>-Log in to a machine with Group Policy Management Console installed (typically, a Domain Controller). </p>
@@ -262,7 +265,7 @@ Computer Configuration > Policies > Windows Settings > Security Settings > Accou
 
 
 </p>
-<p>Dealing with Account Lockouts</p>
+<p><b>9) </b>Dealing with Account Lockouts</p>
 <p>-Get logged into dc-1.</p>
 <p>-Pick a random user account you created previously.</p>
 <p>-Attempt to log in with it 5 times with a bad password.</p>
@@ -282,7 +285,7 @@ Computer Configuration > Policies > Windows Settings > Security Settings > Accou
 
 
 </p>
-<p>Enabling and Disabling Accounts</p>
+<p><b>10) </b>Enabling and Disabling Accounts</p>
 <p>-Disable the same account in Active Directory.</p>
 <p>-Attempt to login with it, observe the error message.</p>
 <p>-Re-enable the account and attempt to login with it.</p>
@@ -298,7 +301,7 @@ Computer Configuration > Policies > Windows Settings > Security Settings > Accou
 
 
 </p>
-<p>Observing Logs</p>
+<p><b>11) </b>Observing Logs</p>
 <p>-Observe the logs in the Domain Controller.</p>
 <p>-Observe the logs on the client Machine.</p>
 
